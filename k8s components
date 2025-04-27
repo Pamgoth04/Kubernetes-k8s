@@ -1,0 +1,75 @@
+1. Control Plane Components (the brain 🧠 of the cluster)
+kube-apiserver:
+Front-end of the Kubernetes control plane.
+It exposes the Kubernetes API.
+All communication (kubectl, etc.) goes through this.
+
+etcd:
+Distributed key-value store.
+Stores all cluster data (like configs, states).
+Critical for backup and recovery.
+
+kube-scheduler:
+Decides which node a new Pod should run on.
+It watches for unscheduled Pods and matches them to nodes based on resource needs, constraints, etc.
+
+kube-controller-manager:
+Runs controller processes.
+Examples: Node Controller, ReplicaSet Controller, Endpoints Controller, etc.
+It ensures the desired cluster state matches reality.
+
+cloud-controller-manager (optional for cloud providers):
+Manages cloud-specific logic like load balancers, volumes, and node management.
+
+2. Node Components (the workers 🛠️)
+kubelet:
+Runs on each node.
+Ensures containers are running in Pods as expected.
+Talks to the container runtime (like containerd or Docker).
+
+kube-proxy:
+Handles network routing and forwarding.
+Provides basic service load balancing across Pods.
+
+Container Runtime:
+Software that runs containers (Docker, containerd, CRI-O, etc.).
+Kubernetes talks to the runtime to start/stop containers.
+
+3. Other Key Concepts (building blocks 🧩)
+Pod:
+The smallest deployable unit in Kubernetes.
+A Pod can contain one or more containers.
+
+Service:
+A stable endpoint to expose a set of Pods.
+Supports load balancing and service discovery.
+
+ConfigMap and Secret:
+Store configuration data and sensitive data like passwords.
+
+Deployment:
+Defines desired state for Pods and ReplicaSets.
+Handles rolling updates, rollbacks.
+
+Namespace:
+Virtual cluster within a physical cluster.
+Helps organize resources.
+
+Ingress:
+Manages external access to Services, typically HTTP.
+Provides load balancing, SSL termination, etc.
+
+Volume:
+Persistent storage used by Pods.
+
+ReplicaSet:
+Ensures a specified number of Pods are running.
+
+DaemonSet:
+Runs a copy of a Pod on all (or some) nodes.
+
+StatefulSet:
+For stateful applications (e.g., databases) with stable network identities and persistent storage.
+
+Job and CronJob:
+Run tasks once (Job) or on a schedule (CronJob).
