@@ -1,0 +1,36 @@
+Kubernetes Features
+
+Automated rollouts and rollbacks
+Kubernetes progressively rolls out changes to your application or its configuration, while monitoring application health to ensure it doesn't kill all your instances at the same time. 
+If something goes wrong, Kubernetes will rollback the change for you. Take advantage of a growing ecosystem of deployment solutions.
+
+Service discovery and load balancing
+No need to modify your application to use an unfamiliar service discovery mechanism. Kubernetes gives Pods their own IP addresses and a single DNS name for a set of Pods, and can load-balance across them.
+
+Storage orchestration
+Automatically mount the storage system of your choice, whether from local storage, a public cloud provider, or a network storage system such as iSCSI or NFS.
+
+Secret and configuration management
+Deploy and update Secrets and application configuration without rebuilding your image and without exposing Secrets in your stack configuration.
+
+Automatic bin packing
+Automatically places containers based on their resource requirements and other constraints, while not sacrificing availability. 
+Mix critical and best-effort workloads in order to drive up utilization and save even more resources.
+
+Batch execution
+In addition to services, Kubernetes can manage your batch and CI workloads, replacing containers that fail, if desired.
+
+Self-healing
+Kubernetes restarts containers that crash, replaces entire Pods where needed, reattaches storage in response to wider failures, and can integrate with node autoscalers to self-heal even at the node level.
+
+Horizontal scaling
+Scale your application up and down with a simple command, with a UI, or automatically based on CPU usage.
+
+IPv4/IPv6 dual-stack
+Allocation of IPv4 and IPv6 addresses to Pods and Services
+
+Designed for extensibility
+Add features to your Kubernetes cluster without changing upstream source code.
+
+
+
